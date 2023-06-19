@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dz13</title>
+    <script>
+      function generateKey(length, characters) {
+        let key = "";
+        const charactersLength = characters.length;
+
+        for (let i = 0; i < length; i++) {
+          const randomIndex = Math.floor(Math.random() * charactersLength);
+          key += characters[randomIndex];
+        }
+
+        return key;
+      }
+
+      function performOperations() {
+        const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+        const key = generateKey(16, characters);
+        console.log(key); // Вивід: eg599gb60q926j8i
+
+        // Виводимо результат на сторінку
+        const resultSpan = document.getElementById("result");
+        resultSpan.textContent = key;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Операції з масивом</h1>
+    <button onclick="performOperations()">Виконати операції</button>
+    <p>Результат: <span id="result"></span></p>
+  </body>
+</html>
